@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Button Manipulation</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+  <button ng-show="showClickMe" ng-click="clickMe()">Click Me!</button>
+  <button ng-click="hideMe()">Hide Me!</button>
+  <button ng-click="showMe()">Show Me!</button>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.showClickMe = true;
+
+      $scope.clickMe = function() {
+        // Nothing happens when 'Click Me!' is clicked
+      };
+
+      $scope.hideMe = function() {
+        $scope.showClickMe = false; // Hide 'Click Me!' button
+      };
+
+      $scope.showMe = function() {
+        $scope.showClickMe = true; // Show 'Click Me!' button
+      };
+    });
+  </script>
+
+</body>
+</html>
